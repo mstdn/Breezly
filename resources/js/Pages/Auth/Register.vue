@@ -41,7 +41,7 @@ const submit = () => {
                     id="name"
                     v-model="form.name"
                     type="text"
-                    class="mt-1 block w-full"
+                    class="mt-1 block w-full bg-gray-900 rounded-md  border border-gray-700 focus:border-blue-700 text-white"
                     required
                     autofocus
                     autocomplete="name"
@@ -54,7 +54,7 @@ const submit = () => {
                     id="username"
                     v-model="form.username"
                     type="text"
-                    class="mt-1 block w-full"
+                    class="mt-1 block w-full bg-gray-900 rounded-md  border border-gray-700 focus:border-blue-700 text-white"
                     required
                     autocomplete="username"
                 />
@@ -66,7 +66,7 @@ const submit = () => {
                     id="email"
                     v-model="form.email"
                     type="email"
-                    class="mt-1 block w-full"
+                    class="mt-1 block w-full bg-gray-900 rounded-md  border border-gray-700 focus:border-blue-700 text-white"
                     required
                 />
             </div>
@@ -77,7 +77,7 @@ const submit = () => {
                     id="password"
                     v-model="form.password"
                     type="password"
-                    class="mt-1 block w-full"
+                    class="mt-1 block w-full bg-gray-900 rounded-md  border border-gray-700 focus:border-blue-700 text-white"
                     required
                     autocomplete="new-password"
                 />
@@ -89,30 +89,30 @@ const submit = () => {
                     id="password_confirmation"
                     v-model="form.password_confirmation"
                     type="password"
-                    class="mt-1 block w-full"
+                    class="mt-1 block w-full bg-gray-900 rounded-md  border border-gray-700 focus:border-blue-700 text-white"
                     required
                     autocomplete="new-password"
                 />
             </div>
 
-            <div v-if="$page.props.jetstream.hasTermsAndPrivacyPolicyFeature" class="mt-4">
+            <div v-if="$page.props.jetstream.hasTermsAndPrivacyPolicyFeature" class="mt-6">
                 <JetLabel for="terms">
                     <div class="flex items-center">
                         <JetCheckbox id="terms" v-model:checked="form.terms" name="terms" />
 
                         <div class="ml-2">
-                            I agree to the <a target="_blank" :href="route('terms.show')" class="underline text-sm text-gray-600 hover:text-gray-900">Terms of Service</a> and <a target="_blank" :href="route('policy.show')" class="underline text-sm text-gray-600 hover:text-gray-900">Privacy Policy</a>
+                            I agree to the <a target="_blank" :href="route('terms.show')" class="underline text-sm font-semibold text-sky-700">Terms of Service</a> and <a target="_blank" :href="route('policy.show')" class="underline text-sm text-gray-600 hover:text-gray-900">Privacy Policy</a>
                         </div>
                     </div>
                 </JetLabel>
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <Link :href="route('login')" class="underline text-sm text-gray-600 hover:text-gray-900">
+            <div class="flex items-center justify-end mt-6">
+                <Link :href="route('login')" class="font-semibold text-sky-700">
                     Already registered?
                 </Link>
 
-                <JetButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                <JetButton class="ml-4 p-2 bg-gray-50 rounded-full font-bold text-gray-900 border border-gray-700" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Register
                 </JetButton>
             </div>

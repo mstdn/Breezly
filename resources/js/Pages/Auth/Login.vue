@@ -50,7 +50,7 @@ const submit = () => {
                     id="email"
                     v-model="form.email"
                     type="email"
-                    class="mt-1 block w-full"
+                    class="mt-1 block w-full bg-gray-900 rounded-md  border border-gray-700 focus:border-blue-700"
                     required
                     autofocus
                 />
@@ -62,7 +62,7 @@ const submit = () => {
                     id="password"
                     v-model="form.password"
                     type="password"
-                    class="mt-1 block w-full"
+                    class="mt-1 block w-full bg-gray-900 rounded-md  border border-gray-700 focus:border-blue-700"
                     required
                     autocomplete="current-password"
                 />
@@ -71,19 +71,24 @@ const submit = () => {
             <div class="block mt-4">
                 <label class="flex items-center">
                     <JetCheckbox v-model:checked="form.remember" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">Remember me</span>
+                    <span class="font-semibold text-sky-700 p-2">Remember me</span>
                 </label>
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <Link v-if="canResetPassword" :href="route('password.request')" class="underline text-sm text-gray-600 hover:text-gray-900">
+                <Link v-if="canResetPassword" :href="route('password.request')" class="font-semibold text-sky-700">
                     Forgot your password?
                 </Link>
+            </div>
+            <div class="flex items-center justify-center mt-4">
 
-                <JetButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                <JetButton class="ml-4 p-2 bg-gray-50 rounded-full font-bold text-gray-900 border border-gray-700" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Log in
                 </JetButton>
             </div>
+
+        
+
         </form>
     </JetAuthenticationCard>
 </template>

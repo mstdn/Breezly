@@ -1,12 +1,7 @@
-<script setup>
-import AppLayout from '@/Layouts/AppLayout.vue';
-import Welcome from '@/Jetstream/Welcome.vue';
-</script>
-
 <template>
-    <AppLayout title="Dashboard">
+    <AppLayout title="User Profile">
         <template #header>
-                Dashboard
+                User Profile
         </template>
 
         <div
@@ -16,7 +11,7 @@ import Welcome from '@/Jetstream/Welcome.vue';
               class="flex flex-col items-center justify-center text-center p-6 bg-white dark:bg-dim-900 border-b border-t border-gray-200 dark:border-dim-200 hover:bg-gray-50 dark:hover:bg-dim-300 cursor-pointer transition duration-350 ease-in-out text-blue-400 text-sm"
             >
               <h1 class="dark:text-white text-gray-900 text-2xl font-bold mb-2">
-                Customize your view
+                {{ user.username }}
               </h1>
               <p class="text-gray-500 mb-5">
                 Manage your font size, color and background. These settings
@@ -50,3 +45,14 @@ import Welcome from '@/Jetstream/Welcome.vue';
 
     </AppLayout>
 </template>
+<script setup>
+import AppLayout from '@/Layouts/AppLayout.vue';
+import Welcome from '@/Jetstream/Welcome.vue';
+
+let props = defineProps({
+  user: Object,
+});
+</script>
+<style lang="">
+    
+</style>

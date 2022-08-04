@@ -14,12 +14,17 @@ class PostController extends Controller
     public function index(Post $post)
     {
         return Inertia::render('Posts/Index', [
-            'posts' => Post::query()            
-            ->paginate(10)
+            'posts' => Post::query()       
+            ->latest()
+            ->paginate(50)
             ->withQueryString()
             ->through(fn($post) => [
-                'user'    =>  $post->user->username,
-                'content'  =>  $post->content
+                'name'    =>  $post->user->name,
+                'username'    =>  $post->user->username,
+                'text'  =>  $post->content,
+                'time'      =>  $post->created_at->diffForHumans(),
+                'avatar'    =>  $post->user->getProfilePhotoUrlAttribute(),
+                'userlink'  =>  '@' . $post->user->username
             ])
         ]);
     }

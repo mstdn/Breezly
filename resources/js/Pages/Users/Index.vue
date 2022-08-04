@@ -65,6 +65,7 @@
 </template>
 <script setup>
 import AppLayout from "@/Layouts/AppLayout.vue";
+import Pagination from "../../Shared/Pagination.vue";
 import { ref, watch } from "vue";
 import { Inertia } from "@inertiajs/inertia";
 import throttle from "lodash/throttle";

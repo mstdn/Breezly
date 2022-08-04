@@ -27,4 +27,16 @@ class UserController extends Controller
             'filters' => $request->only(['search'])
         ]);
     }
+    public function show()
+    {
+        return Inertia::render('Users/Show', [
+            'users' => User::all()->map(function ($user) {
+                return [
+                    'id' => $user->id,
+                    'name' => $user->name,
+                    'username' => $user->username
+                ];
+            })
+        ]);
+    }
 }
