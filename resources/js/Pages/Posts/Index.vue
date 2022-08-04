@@ -217,13 +217,13 @@ let props = defineProps({
         <div class="flex-shrink-0 group block">
           <div class="flex items-top">
             <div>
-              <Link href="{{ post.userlink }}"> 
+              <InertiaLink :href="route('user-profile', { id: post.username })">
               <img
                 class="inline-block h-9 w-9 rounded-full"
                 :src="post.avatar"
                 alt=""
               />
-              </Link>
+              </InertiaLink>
             </div>
             <div class="ml-3">
               <p
@@ -237,7 +237,9 @@ let props = defineProps({
                   dark:text-white
                 "
               >
+                <InertiaLink :href="route('user-profile', { id: post.username })">
                 {{ post.name }}
+                </InertiaLink>
                 <svg
                   viewBox="0 0 24 24"
                   aria-label="Verified account"

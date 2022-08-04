@@ -15,6 +15,7 @@
         @inertiaHead
     </head>
     <body class="bg-white dark:bg-dim-900">
+        @routes
         @inertia
     </body>
 </html>
