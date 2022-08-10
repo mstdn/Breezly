@@ -101,8 +101,8 @@
           />
         </div>
 
-        <div v-if="post.hasVideo !== null" class="flex my-3 mr-2 rounded-2xl border border-gray-600 w-fit">
-          <vue3-video-player :src="post.video"></vue3-video-player>
+        <div v-if="post.hasVideo !== null" class="flex my-3 mr-2 rounded-2xl border border-gray-600">
+          <vue3-video-player class="w-fit" :src="post.video"></vue3-video-player>
         </div>
 
         <div class="flex">

@@ -56,7 +56,7 @@ class PostController extends Controller
                 'time'          =>  $post->created_at->diffForHumans(),
                 'avatar'        =>  $post->user->getProfilePhotoUrlAttribute(),
                 'userlink'      =>  '@' . $post->user->username,
-                'media'         =>  'storage/' . $post->files,
+                'media'         =>  'storage/' . $post->media,
                 'hasVideo'      =>  $post->converted_for_downloading_at,
                 'video'         =>  Storage::disk('public')->url('uploads/' . $post->user->id . '/' . 'videos/' . $post->id . '.mp4'),
                 'delete'        =>  Auth::user()->id === $post->user_id,
