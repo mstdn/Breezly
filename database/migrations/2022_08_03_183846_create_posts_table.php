@@ -17,7 +17,13 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->longText('content')->nullable();
-            $table->boolean('featured')->default(false);
+            $table->string('media')->nullable();
+            $table->string('video')->nullable();
+            $table->string('tags')->nullable();
+            $table->string('original_name')->nullable();
+            $table->string('disk')->nullable();
+            $table->string('path')->nullable();
+            $table->datetime('converted_for_downloading_at')->nullable();
             $table->enum('visibility', ['Public', 'Unlisted', 'Private'])->default('Public');
             $table->timestamps();
         });

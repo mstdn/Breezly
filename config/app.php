@@ -185,6 +185,8 @@ return [
         /*
          * Package Service Providers...
          */
+        Mews\Purifier\PurifierServiceProvider::class,
+        ProtoneMedia\LaravelFFMpeg\Support\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -211,6 +213,8 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+        'Purifier' => Mews\Purifier\Facades\Purifier::class,
+        'FFMpeg' => ProtoneMedia\LaravelFFMpeg\Support\FFMpeg::class
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 

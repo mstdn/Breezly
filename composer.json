@@ -12,6 +12,10 @@
         "laravel/jetstream": "^2.10",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
+        "mews/purifier": "^3.3",
+        "overtrue/laravel-follow": "^5.0",
+        "overtrue/laravel-like": "^5.0",
+        "pbmedia/laravel-ffmpeg": "^8.1",
         "tightenco/ziggy": "^1.0"
     },
     "require-dev": {

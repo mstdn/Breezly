@@ -12,7 +12,7 @@ let props = defineProps({
 
 <template>
   <AppLayout title="Home">
-    <template #header> Public </template>
+    <template #header> Home </template>
 
     <!-- Post Tweet -->
    <Compose />

@@ -18,25 +18,9 @@ Route::get('@{user:username}', [UserController::class, 'show'])->name('user-prof
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::get('/home', [PostController::class, 'index'])->name('home');
+    Route::get('/home', [PostController::class, 'home'])->name('home');
     Route::post('/home', [PostController::class, 'store']);
-    Route::get('/users', function () {
-        return Inertia::render('Users/Index', [
-            'users' => User::query()
-
-            ->when(Request::input('search'), function ($query, $search) {
-                $query->where('name', 'like', "%{$search}%");
-            })
-            
-            ->paginate(50)
-            ->withQueryString()
-            ->through(fn($user) => [
-                'id'    =>  $user->id,
-                'name'  =>  $user->name,
-                'photo' =>  $user->profile_photo_path
-            ]),
-
-            'filters' => Request::only(['search'])
-        ]);
-    })->name('users');
+    Route::get('/public', [PostController::class, 'public'])->name('public');
+    Route::post('/{user:username}/follow', [UserController::class, 'follow'])->name('follow');
+    Route::get('/users', [UserController::class, 'index'])->name('users');
 });

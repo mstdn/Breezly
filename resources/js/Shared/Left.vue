@@ -17,7 +17,7 @@
 
             <!-- Nav -->
             <nav class="mt-5">
-                <NavLink href="/home" :active="$page.component === 'Home'">
+                <NavLink href="/home" :active="$page.component === 'Posts/Home'">
                 <svg fill="currentColor" viewBox="0 0 24 24" class="h-6 w-6">
                 <path
                     stroke-linecap="round"
@@ -31,7 +31,7 @@
                 </span>
                 </NavLink>
 
-                <NavLink href="/dashboard" :active="$page.component === 'Dashboard'">
+                <NavLink href="/public" :active="$page.component === 'Posts/Index'">
                 <svg fill="currentColor" viewBox="0 0 24 24" class="h-6 w-6">
                   <path
                     stroke-linecap="round"
@@ -41,7 +41,7 @@
                   ></path>
                 </svg>
                 <span class="hidden xl:block ml-4 font-bold text-md">
-                    Dashboard
+                    Public
                 </span>
                 </NavLink>
 
