@@ -22,7 +22,6 @@
         "vue": "^3.2.31"
     },
     "dependencies": {
-        "@cloudgeek/vue3-video-player": "^0.3.10",
-        "vue-plyr": "^7.0.0"
+        "@cloudgeek/vue3-video-player": "^0.3.10"
     }
 }
