@@ -78,6 +78,7 @@ class PostController extends Controller
             ->paginate(20)
             ->withQueryString()
             ->through(fn($post) => [
+                'id'            =>  $post->id,
                 'name'    =>  $post->user->name,
                 'username'    =>  $post->user->username,
                 'text'  =>  $post->content,
@@ -87,6 +88,10 @@ class PostController extends Controller
                 'media'     =>  'storage/' . $post->media,
                 'hasVideo'  =>  $post->converted_for_downloading_at,
                 'video'         =>  Storage::disk('public')->url('uploads/' . $post->user->id . '/' . 'videos/' . $post->id . '.mp4'),
+                'delete'        =>  Auth::user()->id === $post->user_id,
+                'status'        =>  $post->status,
+                'isliked'       =>  $post->isLikedBy(auth()->user()),
+                'likes'         =>  $post->likers()->count(),
             ])
         ]);
     }
@@ -128,5 +133,15 @@ class PostController extends Controller
             $post = Post::create($post);
         }
         return redirect(('/home'));
+    }
+
+    public function like(Post $post)
+    {
+        if(auth()->user()->hasLiked($post) ) {
+            auth()->user()->unlike($post);
+        } else {
+       auth()->user()->toggleLike($post);
+        }
+        return back();
     }
 }

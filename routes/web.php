@@ -12,7 +12,7 @@ use Faker\Provider\ar_EG\Internet;
 
 Route::get('/', function () {
     return Inertia::render('Auth/Register');
-});
+})->middleware('guest');
 
 Route::get('@{user:username}', [UserController::class, 'show'])->name('user-profile');
 
@@ -23,4 +23,5 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('/public', [PostController::class, 'public'])->name('public');
     Route::post('/{user:username}/follow', [UserController::class, 'follow'])->name('follow');
     Route::get('/users', [UserController::class, 'index'])->name('users');
+    Route::post('/posts/{post}/like', [PostController::class, 'like'])->name('like');
 });
