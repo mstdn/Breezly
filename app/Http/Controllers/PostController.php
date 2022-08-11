@@ -102,7 +102,7 @@ class PostController extends Controller
          $post = $request->validate([
             'content'          => 'required|min:1|max:500',
             'image'            => ['nullable','mimes:jpg,jpeg,png,gif','max:500048'],
-            'video'            => 'nullable|file|max:200000|mimetypes:video/mp4,video/mpeg,video/x-matroska,video/mov',
+            'video'            => 'nullable|file|mimetypes:video/x-ms-asf,video/x-flv,video/mp4,video/mpeg,application/x-mpegURL,video/MP2T,video/3gpp,video/quicktime,video/x-msvideo,video/x-ms-wmv,video/avi|max:50240',
             'tags'             => 'nullable',
             'disk'             => 'public',
         ]);
@@ -144,4 +144,22 @@ class PostController extends Controller
         }
         return back();
     }
+
+
+    // Delete item
+    public function destroy(Post $post) 
+    {
+        if (! Gate::allows('delete-post', $post)) {
+            abort(403);
+        }
+
+        File::delete(public_path('uploads/videos/') . $post->id . '.mp4');
+
+        // Delete the file
+        File::delete($post->path);
+
+        $post->delete();
+        return redirect('/home')->with('message', 'Post deleted successfully.');
+    }
+
 }

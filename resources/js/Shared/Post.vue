@@ -214,8 +214,8 @@
                   text-gray-800
                   dark:text-red-600
                   text-xs text-red-600
-                  hover:text-white
-                  dark:hover:text-gray-400
+                  hover:text-red-700
+                  dark:hover:text-red-400
                   transition
                   duration-350
                   ease-in-out
