@@ -131,9 +131,6 @@
             <!-- /Who to follow -->
 
 
-  
-
-
 
   </AppLayout>
 </template>

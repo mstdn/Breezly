@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
 use Inertia\Inertia;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -34,8 +35,13 @@ class PostController extends Controller
         ]);
     }
 
-    public function home(Post $post, Request $request)
+    public function home(Post $post, Request $request, User $user)
     {
+        $tweets = $user->posts()->with('user')->paginate();
+
+        if ($request->wantsJson()) {
+            return $tweets;
+        }
         return Inertia::render('Posts/Home', [
             'posts' => Post::where(function ($query)
             {
@@ -46,7 +52,7 @@ class PostController extends Controller
             ->when($request->input('search'), function ($query, $search) {
                 $query->where('description', 'like', "%{$search}%");
             })
-            ->paginate(20)
+            ->paginate(5)
             ->withQueryString()
             ->through(fn($post) => [
                 'id'            =>  $post->id,

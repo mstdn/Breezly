@@ -29,7 +29,7 @@
               </div>
               <input
                 class="w-full bg-gray-200 dark:bg-dim-400 border-gray-200 dark:border-dim-400 text-gray-100 focus:bg-gray-100 dark:focus:bg-dim-900 focus:outline-none focus:border focus:border-blue-200 font-normal h-9 flex items-center pl-12 text-sm rounded-full border shadow"
-                placeholder="Search Twitter"
+                placeholder="Search Birb"
               />
             </div>
             <!-- /Search -->
@@ -47,9 +47,9 @@
                 class="text-blue-400 text-sm font-normal p-3 border-b border-gray-200 dark:border-dim-200 hover:bg-gray-100 dark:hover:bg-dim-300 cursor-pointer transition duration-350 ease-in-out"
               >
                 <h2 class="font-bold text-md text-gray-800 dark:text-white">
-                  #FreePS5Monday
+                  #LOL
                 </h2>
-                <p class="text-xs text-gray-400">29.7K Tweets</p>
+                <p class="text-xs text-gray-400">29.7K Posts</p>
               </div>
               <!-- /Trending Topic -->
 
@@ -58,9 +58,9 @@
                 class="text-blue-400 text-sm font-normal p-3 border-b border-gray-200 dark:border-dim-200 hover:bg-gray-100 dark:hover:bg-dim-300 cursor-pointer transition duration-350 ease-in-out"
               >
                 <h2 class="font-bold text-md text-gray-800 dark:text-white">
-                  #BTSonGMA
+                  #cats
                 </h2>
-                <p class="text-xs text-gray-400">351K Tweets</p>
+                <p class="text-xs text-gray-400">351K Posts</p>
               </div>
               <!-- /Trending Topic -->
 
@@ -69,9 +69,9 @@
                 class="text-blue-400 text-sm font-normal p-3 border-b border-gray-200 dark:border-dim-200 hover:bg-gray-100 dark:hover:bg-dim-300 cursor-pointer transition duration-350 ease-in-out"
               >
                 <h2 class="font-bold text-md text-gray-800 dark:text-white">
-                  #AstraZeneca
+                  #FOSS
                 </h2>
-                <p class="text-xs text-gray-400">52.7K Tweets</p>
+                <p class="text-xs text-gray-400">52.7K Posts</p>
               </div>
               <!-- /Trending Topic -->
 
@@ -99,16 +99,16 @@
                   <div class="flex flex-row">
                     <img
                       class="w-10 h-10 rounded-full"
-                      src="https://pbs.twimg.com/profile_images/1308769664240160770/AfgzWVE7_normal.jpg"
-                      alt="Joe Biden"
+                      src="https://catgram.co/storage/avatars/044/132/214/635/043/225/7/PTAnQfoaB76CJ0a3Qusn_avatar.jpg"
+                      alt="Washy"
                     />
                     <div class="flex flex-col ml-2">
                       <h1
                         class="text-gray-900 dark:text-white font-bold text-sm"
                       >
-                        Joe Biden
+                        Washy
                       </h1>
-                      <p class="text-gray-400 text-sm">@JoeBiden</p>
+                      <p class="text-gray-400 text-sm">@Washy</p>
                     </div>
                   </div>
                   <div class="">
@@ -134,16 +134,16 @@
                   <div class="flex flex-row">
                     <img
                       class="w-10 h-10 rounded-full"
-                      src="https://pbs.twimg.com/profile_images/1308769664240160770/AfgzWVE7_normal.jpg"
-                      alt="Joe Biden"
+                      src="https://catgram.co/storage/avatars/044/132/266/233/773/260/9/GkTungHuj3Xeo0Wp9kH0_avatar.jpg?v=2"
+                      alt="George"
                     />
                     <div class="flex flex-col ml-2">
                       <h1
                         class="text-gray-900 dark:text-white font-bold text-sm"
                       >
-                        Joe Biden
+                        George
                       </h1>
-                      <p class="text-gray-400 text-sm">@JoeBiden</p>
+                      <p class="text-gray-400 text-sm">@George</p>
                     </div>
                   </div>
                   <div class="">
@@ -161,22 +161,7 @@
               </div>
               <!-- /Twitter Account -->
 
-              <!-- Loader -->
-              <div
-                class="border-b border-gray-200 dark:border-dim-200 p-4 max-w-sm w-full mx-auto"
-              >
-                <div class="animate-pulse flex space-x-4">
-                  <div class="rounded-full bg-gray-400 h-12 w-12"></div>
-                  <div class="flex-1 space-y-4 py-1">
-                    <div class="h-4 bg-gray-400 rounded w-3/4"></div>
-                    <div class="space-y-2">
-                      <div class="h-4 bg-gray-400 rounded"></div>
-                      <div class="h-4 bg-gray-400 rounded w-5/6"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- /Loader -->
+            
 
               <div
                 class="text-blue-400 text-sm font-normal p-3 hover:bg-gray-100 dark:hover:bg-dim-300 cursor-pointer transition duration-350 ease-in-out"
@@ -197,13 +182,8 @@
                 <li class="inline-block mx-2">
                   <a class="hover:underline" href="#">Cookie Policy</a>
                 </li>
-                <li class="inline-block mx-2">
-                  <a class="hover:underline" href="#">Ads info</a>
-                </li>
-                <li class="inline-block mx-2">
-                  <a class="hover:underline" href="#">More</a>
-                </li>
-                <li class="inline-block mx-2">© 2020 Twitter, Inc.</li>
+                
+                <li class="inline-block mx-2">© 2022 Birb, Inc.</li>
               </ul>
             </footer>
           </div>
