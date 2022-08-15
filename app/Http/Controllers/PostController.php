@@ -52,7 +52,7 @@ class PostController extends Controller
             ->when($request->input('search'), function ($query, $search) {
                 $query->where('description', 'like', "%{$search}%");
             })
-            ->paginate(5)
+            ->paginate(25)
             ->withQueryString()
             ->through(fn($post) => [
                 'id'            =>  $post->id,

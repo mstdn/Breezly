@@ -81,7 +81,11 @@
         </div>
 
         <div v-if="post.hasVideo !== null" class="flex mb-4 mr-2">
-          <vue3-video-player class="w-fit" :src="post.video"></vue3-video-player>
+          <vue-plyr :options="options">
+            <video controls crossorigin playsinline loop data-poster="poster.jpg">
+              <source size="720" :src="post.video" type="video/mp4" />
+            </video>
+          </vue-plyr>
         </div>
 
         <div class="flex">
@@ -130,7 +134,8 @@
                 0
               </div>
 
-              <InertiaLink v-if="$page.props.user !== null && post.isliked === false" preserveScroll method="post" as="button" class="
+              <InertiaLink v-if="$page.props.user !== null && post.isliked === false" preserveScroll method="post"
+                as="button" class="
                 flex-1 flex
                   items-center
                   text-gray-800
@@ -152,7 +157,8 @@
                 {{ post.likes }}
               </InertiaLink>
 
-              <InertiaLink v-if="$page.props.user !== null && post.isliked === true" preserveScroll method="post" as="button" class="
+              <InertiaLink v-if="$page.props.user !== null && post.isliked === true" preserveScroll method="post"
+                as="button" class="
                 flex-1 flex
                   items-center
                   text-red-600
